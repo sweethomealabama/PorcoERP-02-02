@@ -4,10 +4,9 @@
  */
 $(function() {
 	document.writeln("<script type='text/javascript' src='inputFanOut.js'></script>");
+	document.writeln("<script type='text/javascript' src='inputReverse.js'></script>");
 
 		$("#all").click(checkBox());
-		$("#reverse").click(function() {
-			$("[name=roles]:checkbox").each(checked());
-		});
+		$("#reverse").click(reverseFun());
 		$("#supplier").change(goodsFun());
 });
