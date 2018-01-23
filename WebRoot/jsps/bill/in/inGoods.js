@@ -3,6 +3,10 @@
  * @returns
  */
 $(function() {
+	document.writeln("<script type='text/javascript' src='lib/headSet.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/inGoodsFanOut.js'></script>");
+
+
 		$("#query").click(function() {
 			$("[name='pageNum']").val(1);
 			$("form:first").submit();
@@ -24,40 +28,14 @@ $(function() {
 				//动态添加一个tr行,用于做标题栏
 				//创建tr组件
 				
-				var $trHead = $("<tr align='center' class='ajaxMsg' style='background:url(images/table_bg.gif) repeat-x;'></tr>");
-				var $td1 = $("<td height='30'>订单号</td>");
-				$trHead.append($td1);
-				var $td2 = $("<td>订单时间</td>");
-				$trHead.append($td2);
-				var $td3 = $("<td>数量</td>");
-				$trHead.append($td3);
-				var $td4 = $("<td>单价</td>");
-				$trHead.append($td4);
-				var $td5 = $("<td>合计</td>");
-				$trHead.append($td5);
-				$tt.after($trHead);
-				$tt=$trHead;
-				
+				var tCodes = setHead(tt);
+				trHead = tCodes[0];
+				tt = tCodes[1];
 				//--------------------------------------------------------------------------
-				var sum = 0;
-				for(i = 0;i<3;i++){
-					var $tr = $("<tr align='center' class='ajaxMsg'></tr>");
-					//共计5列
-					var $td1 = $("<td height='30'>1238987412</td>");
-					$tr.append($td1);
-					var $td2 = $("<td>2014-01-01</td>");
-					$tr.append($td2);
-					var $td3 = $("<td>"+i+"</td>");
-					$tr.append($td3);
-					var $td4 = $("<td align='right'>100.00&nbsp;元</td>");
-					$tr.append($td4);
-					var $td5 = $("<td align='right'>100.00&nbsp;元</td>");
-					$tr.append($td5);
-					
-					$tt.after($tr);
-					$tt=$tr;
-					sum = sum + 100;
-				}
+				tCodes = setTr(tr, tt);
+				tr = tCodes[0];
+				tt = tCodes[1];
+				
 				//--------------------------------------------------------------------------
 				
 				
