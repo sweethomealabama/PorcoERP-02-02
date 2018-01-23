@@ -7,9 +7,7 @@ $(function() {
 
 		$("#all").click(checkBox());
 		$("#reverse").click(function() {
-			$("[name=roles]:checkbox").each(function () {
-                $(this).attr("checked", !$(this).attr("checked"));
-            });
+			$("[name=roles]:checkbox").each(checked());
 		});
 		$("#supplier").change(goodsFun());
 });
