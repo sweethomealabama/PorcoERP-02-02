@@ -3,10 +3,10 @@
  */
 // 获取对象
 document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
+document.writeln("<script type='text/javascript' src='safeFun.js'></script>");
+
 document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
-		var $ = function(id) {
-			return document.getElementById(id);
-		};
+		var $ = elementById(id);
 		// 遍历
 		var each = function(a, b) {
 			for ( var i = 0, len = a.length; i < len; i++)
@@ -23,13 +23,7 @@ document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
 			e.preventDefault ? e.preventDefault() : e.returnValue = false;
 		};
 		// 获取页面滚动条位置
-		var getPage = function() {
-			var dd = document.documentElement, db = document.body;
-			return {
-				left : Math.max(dd.scrollLeft, db.scrollLeft),
-				top : Math.max(dd.scrollTop, db.scrollTop)
-			};
-		};
+		var getPage = pageGetter();
 
 		// 锁屏
 		
@@ -37,24 +31,9 @@ document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
 				
 
 			show : visibility(),
-			close : function() {
-				$('pageOverlay').style.visibility = 'hidden';
-				each(
-						[ 'DOMMouseScroll', 'mousewheel', 'scroll',
-								'contextmenu' ], function(o, i) {
-							unbind(document, o, lock.mouse);
-						});
-				unbind(document, 'keydown', lock.key);
-			}
+			close : pageOver()
 		};
-		bind(window, 'load', function() {
-			$('btn_ok').onclick = hid();
-			$('btn_cancel').onclick = function() {
-				//删除遮罩的方法调用
-				lock.close();
-				$('context-msg').style.display = "none";
-			};
-		});
+		bind(window, 'load', bindClick());
 		/*
 		<s:if test="#msg!=null and !#msg.isEmpty()">
 			top.$('hid-action').value = 'content.action';

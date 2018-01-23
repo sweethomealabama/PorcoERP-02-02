@@ -1,3 +1,11 @@
+/**
+ * this file is called in mask.js
+ * 
+ * @param obj
+ * @param type
+ * @param fn
+ * @returns
+ */
 function bindFun(obj, type, fn) {
 			if (obj.attachEvent) {
 				obj['e' + type + fn] = fn;
@@ -22,4 +30,8 @@ function unbindFun(obj, type, fn) {
 		obj.removeEventListener(type, fn, false);
 	}
 	;
+}
+
+function elementById(id) {
+	return document.getElementById(id);
 }
