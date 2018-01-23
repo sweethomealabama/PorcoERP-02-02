@@ -2,6 +2,8 @@
  * this file is called in mask.jsp file
  */
 // 获取对象
+document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
+document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
 		var $ = function(id) {
 			return document.getElementById(id);
 		};
@@ -11,33 +13,10 @@
 				b(a[i], i);
 		};
 		// 事件绑定
-		var bind = function(obj, type, fn) {
-			if (obj.attachEvent) {
-				obj['e' + type + fn] = fn;
-				obj[type + fn] = function() {
-					obj['e' + type + fn](window.event);
-				}
-				obj.attachEvent('on' + type, obj[type + fn]);
-			} else {
-				obj.addEventListener(type, fn, false);
-			}
-			;
-		};
+		var bind = bindFun(obj, type, fn);
 
 		// 移除事件
-		var unbind = function(obj, type, fn) {
-			if (obj.detachEvent) {
-				try {
-					obj.detachEvent('on' + type, obj[type + fn]);
-					obj[type + fn] = null;
-				} catch (_) {
-				}
-				;
-			} else {
-				obj.removeEventListener(type, fn, false);
-			}
-			;
-		};
+		var unbind = unbindFun(obj, type, fn);
 
 		// 阻止浏览器默认行为
 		var stopDefault = function(e) {
@@ -53,39 +32,11 @@
 		};
 
 		// 锁屏
+		
 		var lock = {
-			show : function() {
-				$('pageOverlay').style.visibility = 'visible';
-				var p = getPage(), left = p.left, top = p.top;
+				
 
-				// 页面鼠标操作限制
-				this.mouse = function(evt) {
-					var e = evt || window.event;
-					stopDefault(e);
-					scroll(left, top);
-				};
-				each(
-						[ 'DOMMouseScroll', 'mousewheel', 'scroll',
-								'contextmenu' ], function(o, i) {
-							bind(document, o, lock.mouse);
-						});
-				// 屏蔽特定按键: F5, Ctrl + R, Ctrl + A, Tab, Up, Down
-				this.key = function(evt) {
-					var e = evt || window.event, key = e.keyCode;
-					if ((key == 116) || (e.ctrlKey && key == 82)
-							|| (e.ctrlKey && key == 65) || (key == 9)
-							|| (key == 38) || (key == 40)) {
-						try {
-							e.keyCode = 0;
-						} catch (_) {
-						}
-						;
-						stopDefault(e);
-					}
-					;
-				};
-				bind(document, 'keydown', lock.key);
-			},
+			show : visibility(),
 			close : function() {
 				$('pageOverlay').style.visibility = 'hidden';
 				each(
@@ -97,14 +48,7 @@
 			}
 		};
 		bind(window, 'load', function() {
-			$('btn_ok').onclick = function() {
-				//显示遮罩的方法调用
-				//lock.show();
-				//以上为测试操作，以下为真实操作-----------------------------
-				lock.close();
-				$('frame-contect').src = $('hid-action').value;
-				$('context-msg').style.display = "none";
-			};
+			$('btn_ok').onclick = hid();
 			$('btn_cancel').onclick = function() {
 				//删除遮罩的方法调用
 				lock.close();
