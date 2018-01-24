@@ -10,16 +10,13 @@
 	document.writeln("'<s:iterator value= 'storeList'>'uuids[i] = ${uuid};names[i] = '${name}';i++;'</s:iterator>'");
 	
 	$(function(){
-		$(".oper").click(function(){
-			//创建行对象，添加到当前行下方
-			$nowTr = $(this).parent().parent();
-			
-			var odmUuid = $nowTr.attr("odm");
-			
-			$(".in").remove();
-			
-			$.post("order_ajaxGetSurplusByOdmUuid.action",{"odmUuid":odmUuid},dataSet(data));
-		});
+		document.writeln("<script type='text/javascript' src='lib/pickerFun.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/trtd2.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/operLib.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/surplusFun.js'></script>");
+
+		$(".oper").click(operFun());
 		
 		//确定按钮
 		$(".btn_ok").live("click", clickEvent());

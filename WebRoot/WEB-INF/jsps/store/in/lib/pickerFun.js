@@ -4,6 +4,11 @@
  * @returns
  */
 function pickerFun(data){
+	document.writeln("<script type='text/javascript' src='lib/pickerFun.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/trtd2.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/operLib.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/surplusFun.js'></script>");
 				//if(msg){
 					//输入的东西有问题
 					//找个合适的地方提示用户
@@ -20,16 +25,5 @@ function pickerFun(data){
 					$("#return").css("display","block");
     			}
     			
-    			if(surplus == 0){
-    				//删除两个行对象
-    				$nowTr.prev().remove();
-    				$nowTr.remove();
-    			}else{
-		  			//设置剩余量
-		  			$nowTr.prev().children("td:eq(3)").html(surplus);
-		  			//设置值已入库数量
-		  			$nowTr.prev().children("td:eq(2)").html(num-surplus);
-		  			//设置下次入库数量
-		  			$nowTr.children("td:eq(3)").children("input").val(surplus);
-		  		}
+    			ifSurplus(surplus);
 			}
