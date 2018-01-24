@@ -4,6 +4,8 @@
  */
 $(function() {
 	document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/cssFun.js'></script>");
+
 	var pageCount = $pageCount;
 	var pageNum = $pageNum;
 		if(pageCount == 1){
@@ -27,9 +29,6 @@ $(function() {
 			$("#next").css("display","inline");
 			$("#last").css("display","inline");
 		}
-		$("#fir").click(firstFun());
-		$("#pre").click(preFun());
-		$("#next").click(nextFun());
-		$("#last").click(lastFun());
+		cssFun();
 
 });

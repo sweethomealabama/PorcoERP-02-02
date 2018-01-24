@@ -3,8 +3,8 @@
  * @returns
  */
 function firstFun(){
-			$("[name='pageNum']").val(1);
-			$("form:first").submit();
+	$("[name='pageNum']").val(1);
+	$("form:first").submit();
 }
 
 function preFun(){
