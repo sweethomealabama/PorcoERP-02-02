@@ -3,6 +3,7 @@
  * @returns
  */
 $(function() {
+	document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
 	var pageCount = $pageCount;
 	var pageNum = $pageNum;
 		if(pageCount == 1){
@@ -26,21 +27,9 @@ $(function() {
 			$("#next").css("display","inline");
 			$("#last").css("display","inline");
 		}
-		$("#fir").click(function(){
-			$("[name='pageNum']").val(1);
-			$("form:first").submit();
-		});
-		$("#pre").click(function(){
-			$("[name='pageNum']").val($("[name='pageNum']").val()-1);
-			$("form:first").submit();
-		});
-		$("#next").click(function(){
-			$("[name='pageNum']").val($("[name='pageNum']").val()*1+1);
-			$("form:first").submit();
-		});
-		$("#last").click(function(){
-			$("[name='pageNum']").val(pageCount);
-			$("form:first").submit();
-		});
+		$("#fir").click(firstFun());
+		$("#pre").click(preFun());
+		$("#next").click(nextFun());
+		$("#last").click(lastFun());
 
 });
