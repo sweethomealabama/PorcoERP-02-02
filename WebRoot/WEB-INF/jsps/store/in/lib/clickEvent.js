@@ -15,4 +15,4 @@ function clickEvent(){
 			jsonParam["num"] = $nowTr.children("td:eq(3)").children("input").val();
 			jsonParam["odmUuid"] = $nowTr.prev().attr("odm");
 			$.post("store_ajaxInGoods.action",jsonParam,pickerFun(data));
-		}
+}

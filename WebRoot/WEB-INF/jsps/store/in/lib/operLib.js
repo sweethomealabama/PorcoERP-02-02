@@ -16,4 +16,4 @@ function operFun(){
 			$(".in").remove();
 			
 			$.post("order_ajaxGetSurplusByOdmUuid.action",{"odmUuid":odmUuid},dataSet(data));
-		}
+}

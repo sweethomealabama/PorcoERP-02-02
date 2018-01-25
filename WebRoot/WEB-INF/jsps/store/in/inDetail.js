@@ -20,4 +20,4 @@
 		
 		//确定按钮
 		$(".btn_ok").live("click", clickEvent());
-	});
+});

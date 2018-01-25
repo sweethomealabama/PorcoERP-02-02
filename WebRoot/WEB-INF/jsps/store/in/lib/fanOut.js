@@ -22,4 +22,4 @@ function dataSet(data){
 				}
 				trtd2($td2, $tr);
 				
-			}
+}

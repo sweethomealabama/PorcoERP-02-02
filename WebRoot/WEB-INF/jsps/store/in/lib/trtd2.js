@@ -1,3 +1,9 @@
+/**
+ * called in fanOut.js
+ * @param $td2
+ * @param $tr
+ * @returns
+ */
 function trtd2($td2, $tr){
 $td2.append($select);
 				$tr.append($td2);
@@ -16,5 +22,4 @@ $td2.append($select);
 			
 				$nowTr.after($tr);
 				
-				}
-				
+}

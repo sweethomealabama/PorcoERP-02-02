@@ -26,4 +26,4 @@ function pickerFun(data){
     			}
     			
     			ifSurplus(surplus);
-			}
+}
