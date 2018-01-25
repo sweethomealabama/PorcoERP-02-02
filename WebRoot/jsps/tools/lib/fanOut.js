@@ -12,12 +12,7 @@ function preFun(){
 	$("form:first").submit();
 }
 
-function nextFun(){
-	$("[name='pageNum']").val($("[name='pageNum']").val()*1+1);
-	$("form:first").submit();
-}
+document.writeln("<script type='text/javascript' src='nextLastFun.js'></script>");
 
-function lastFun(){
-	$("[name='pageNum']").val(pageCount);
-	$("form:first").submit();
-}
+nextFun();
+lastFun();
