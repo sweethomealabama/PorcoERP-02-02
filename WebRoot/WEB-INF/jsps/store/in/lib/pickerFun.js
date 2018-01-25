@@ -4,11 +4,7 @@
  * @returns
  */
 function pickerFun(data){
-	document.writeln("<script type='text/javascript' src='lib/pickerFun.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/trtd2.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/operLib.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/surplusFun.js'></script>");
+	document.writeln("<script type='text/javascript' src='ifSurplus.js'></script>");
 				//if(msg){
 					//输入的东西有问题
 					//找个合适的地方提示用户
