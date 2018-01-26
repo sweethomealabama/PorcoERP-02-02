@@ -2,10 +2,11 @@
  * called in list.js
  * @returns
  */
-function formFirst() {
-			$("[name='pageNum']").val(1);
-			$("form:first").submit();
-		}
+		document.writeln("<script type='text/javascript' src='listFirst.js'></script>");
+		document.writeln("<script type='text/javascript' src='listUnit.js'></script>");
+
+
+formFirst();
 
 function pageNum(){
 	//将选中的内容作为查询条件出现
@@ -14,9 +15,4 @@ function pageNum(){
 	$("form:first").submit();
 }
 
-function unitFun(){
-	//将选中的内容作为查询条件出现
-	$("[name='gqm.unit']").val($(this).text());
-	$("[name='pageNum']").val(1);
-	$("form:first").submit();
-}
+unitFun();
