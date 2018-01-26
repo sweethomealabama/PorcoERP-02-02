@@ -10,11 +10,8 @@
 	document.writeln("'<s:iterator value= 'storeList'>'uuids[i] = ${uuid};names[i] = '${name}';i++;'</s:iterator>'");
 	
 	$(function(){
-		document.writeln("<script type='text/javascript' src='lib/pickerFun.js'></script>");
-		document.writeln("<script type='text/javascript' src='lib/fanOut.js'></script>");
-		document.writeln("<script type='text/javascript' src='lib/trtd2.js'></script>");
-		document.writeln("<script type='text/javascript' src='lib/operLib.js'></script>");
-		document.writeln("<script type='text/javascript' src='lib/surplusFun.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/operFun.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/clickEvent.js'></script>");
 
 		$(".oper").click(operFun());
 		

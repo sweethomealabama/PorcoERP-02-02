@@ -3,47 +3,23 @@
  * @returns
  */
 $(function() {
-		$("#query").click(function() {
-			$("[name='pageNum']").val(1);
-			$("form:first").submit();
-		});
+	document.writeln("<script type='text/javascript' src='lib/listFanOut.js'></script>");
+
+		$("#query").click(formFirst());
 		
-		$(".unit").click(function(){
-			//将选中的内容作为查询条件出现
-			$("[name='gqm.unit']").val($(this).text());
-			$("[name='pageNum']").val(1);
-			$("form:first").submit();
-		});
+		$(".unit").click(pageNum());
 		
 	});
-	function showMsg(msg,uuid){
-		//top.document.getElementById("context-msg").style.display = "block";
-		top.$('context-msg').style.display = "block";
-		top.$('context-msg-text').innerHTML=msg;
-		top.$('hid-action').value="actionName";
-		top.lock.show();
-	}/**
-	 * this file is called in list.jsp
-	 * @returns
-	 */
+document.writeln("<script type='text/javascript' src='lib/showMsg.js'></script>");
+showMsg(msg, uuid);
 	$(function() {
-			$("#query").click(function() {
-				$("[name='pageNum']").val(1);
-				$("form:first").submit();
-			});
+		document.writeln("<script type='text/javascript' src='lib/listFanOut.js'></script>");
+
+			$("#query").click(queryFun());
 			
-			$(".unit").click(function(){
-				//将选中的内容作为查询条件出现
-				$("[name='gqm.unit']").val($(this).text());
-				$("[name='pageNum']").val(1);
-				$("form:first").submit();
-			});
+			$(".unit").click(unitFun());
 			
 		});
-		function showMsg(msg,uuid){
-			//top.document.getElementById("context-msg").style.display = "block";
-			top.$('context-msg').style.display = "block";
-			top.$('context-msg-text').innerHTML=msg;
-			top.$('hid-action').value="actionName";
-			top.lock.show();
-		}
+	
+	
+	showMsg(msg, uuid);
