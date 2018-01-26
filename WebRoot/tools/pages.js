@@ -27,4 +27,7 @@ function callFun(){
 	document.writeln("<script type='text/javascript' src='lib/pageNum1.js'></script>");
 	document.writeln("<script type='text/javascript' src='lib/pageNumMax.js'></script>");
 	document.writeln("<script type='text/javascript' src='lib/finalElse.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/clickEventFirst.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/clickEventLast.js'></script>");
+
 }
