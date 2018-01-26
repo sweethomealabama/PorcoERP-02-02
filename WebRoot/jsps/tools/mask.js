@@ -3,6 +3,8 @@
  */
 // 获取对象
 document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
+document.writeln("<script type='text/javascript' src='lib/preventDefault.js'></script>");
+
 document.writeln("<script type='text/javascript' src='safeFun.js'></script>");
 
 document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
@@ -19,9 +21,7 @@ document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
 		var unbind = unbindFun(obj, type, fn);
 
 		// 阻止浏览器默认行为
-		var stopDefault = function(e) {
-			e.preventDefault ? e.preventDefault() : e.returnValue = false;
-		};
+		var stopDefault = preventDefault(e);
 		// 获取页面滚动条位置
 		var getPage = pageGetter();
 
