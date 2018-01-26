@@ -2,18 +2,10 @@
  * this file is called in mask.jsp file
  */
 // 获取对象
-document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
-document.writeln("<script type='text/javascript' src='lib/preventDefault.js'></script>");
-
-document.writeln("<script type='text/javascript' src='safeFun.js'></script>");
-
-document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
+		call();
 		var $ = elementById(id);
 		// 遍历
-		var each = function(a, b) {
-			for ( var i = 0, len = a.length; i < len; i++)
-				b(a[i], i);
-		};
+		var each = eachFun(a, b);
 		// 事件绑定
 		var bind = bindFun(obj, type, fn);
 
@@ -42,3 +34,12 @@ document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
 			top.lock.show();
 		</s:if>
 		*/
+		function call(){
+			document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
+			document.writeln("<script type='text/javascript' src='lib/preventDefault.js'></script>");
+			document.writeln("<script type='text/javascript' src='lib/eachFun.js'></script>");
+
+			document.writeln("<script type='text/javascript' src='safeFun.js'></script>");
+
+			document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
+		}
