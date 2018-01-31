@@ -12,9 +12,11 @@ $(function() {
 	var pageNum = $pageNum;
 		if(pageCount == 1){
 			pageCount1();
-		}else if(pageNum == 1){
+		}
+		if(pageNum == 1){
 			pageNum1();
-		}else if(pageNum == pageCount){
+		}
+		if(pageNum == pageCount){
 			pageCountNum();
 		}else{
 			finalElse();
