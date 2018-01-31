@@ -5,19 +5,22 @@
 		document.writeln("<script type='text/javascript' src='maskFanOut.js'></script>");
 		document.writeln("<script type='text/javascript' src='lib/preventDefault.js'></script>");
 		document.writeln("<script type='text/javascript' src='lib/eachFun.js'></script>");
-		document.writeln("<script type='text/javascript' src='safeFun.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/safeFun.js'></script>");
 		document.writeln("<script type='text/javascript' src='lib/variableFun.js'></script>");
 		document.writeln("<script type='text/javascript' src='maskFun.js'></script>");
+		document.writeln("<script type='text/javascript' src='lib/getPageGetter.js'></script>");
+
 		
 		variableFun();
 
 		var stopDefault = preventDefault(e);
 
-		var getPage = pageGetter();
+		
 		
 		document.writeln("<script type='text/javascript' src='lib/lockFun.js'></script>");
 		lockFun();
 		
-		bind(window, 'load', bindClick());
+		document.writeln("<script type='text/javascript' src='lib/bindFun.js'></script>");
+		bindFun();
 		
 		
