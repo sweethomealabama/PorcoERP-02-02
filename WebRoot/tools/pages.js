@@ -3,31 +3,25 @@
  * @returns
  */
 $(function(){
+	document.writeln("<script type='text/javascript' src='lib/maxPage1.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/pageNum1.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/check34.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/clickEventFirst.js'></script>");
+	document.writeln("<script type='text/javascript' src='lib/clickEventLast.js'></script>");
 		var maxPageNum = $maxPageNum;
 		var pageNum = $pageNum;
 		
-		if(maxPageNum == 1){
-			callFun();
+		checkPageNumMaxPage(pageNum, maxPageNum);
+		
+		
+		var check = checkPageNumMaxPage(pageNum, maxPageNum);
+		
+		if(check == 1){
 			maxPage1();
-		}else if(pageNum == 1){
-			callFun();
-			pageNum1();
-		}else if(pageNum == maxPageNum){
-			callFun();
-			pageNumMax();
-		}else{
-			callFun();
-			finalElse();
 		}
-		callFun();
+		if(check == 2){
+			pageNum1();
+		}
+		check34();
 		clickEvent();
 	});
-function callFun(){
-	document.writeln("<script type='text/javascript' src='lib/maxPage1.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/pageNum1.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/pageNumMax.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/finalElse.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/clickEventFirst.js'></script>");
-	document.writeln("<script type='text/javascript' src='lib/clickEventLast.js'></script>");
-
-}
