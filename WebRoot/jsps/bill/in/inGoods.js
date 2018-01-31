@@ -11,8 +11,6 @@ $(function() {
 	$("#query").click(queryFun());
 	$(".ajaxMsg").live("click",msgFun());
 	$(".info").click(setFun());
-	function intToFloat(val){
-		return new Number(val).toFixed(2);
-	}
+	intToFloat(val);
 
 });
