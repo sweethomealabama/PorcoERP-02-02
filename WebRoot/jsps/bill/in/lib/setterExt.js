@@ -3,11 +3,13 @@
  * @returns
  */
 function setterExt(){	
+	document.writeln("<script type='text/javascript' src='ttFun.js'></script>");
+
 var jsonParam = {"bqm.goodsUuid":$(this).attr("value")};
 		jsonParam["bqm.time"]= $("[name='bqm.time']").val();
 		jsonParam["bqm.time2"]= $("[name='bqm.time2']").val();
 		jsonParam["bqm.type"]= $("[name='bqm.type']").val();
-		//$tt = $(this).parent().parent();
+		$tt = ttFun();
 
 		$('.ajaxMsg').empty();
 
