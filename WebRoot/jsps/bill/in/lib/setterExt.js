@@ -7,7 +7,7 @@ var jsonParam = {"bqm.goodsUuid":$(this).attr("value")};
 		jsonParam["bqm.time"]= $("[name='bqm.time']").val();
 		jsonParam["bqm.time2"]= $("[name='bqm.time2']").val();
 		jsonParam["bqm.type"]= $("[name='bqm.type']").val();
-		$tt = $(this).parent().parent();
+		//$tt = $(this).parent().parent();
 
 		$('.ajaxMsg').empty();
 
