@@ -15,7 +15,7 @@ $(function() {
 			storeNameArr[2] = "3号仓库";
 		var omUuid = 123;
 		document.writeln("<script type='text/javascript' src='lib/onClick.js'></script>");
-
+		document.writeln("<script type='text/javascript' src='lib/ajaxIn.js'></script>");
 		
 		$(".oper").click(onClick(storeUuiArr, storeNameArr));
 		$(".ajaxIn").live("click", ajOnClick());
