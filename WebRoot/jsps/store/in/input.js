@@ -14,42 +14,10 @@ $(function() {
 			storeUuidArr[2] = 33;
 			storeNameArr[2] = "3号仓库";
 		var omUuid = 123;
+		document.writeln("<script type='text/javascript' src='lib/onClick.js'></script>");
+
 		
-		$(".oper").click(function() {
-			var $myTr = $(this).parent().parent();
-			var $nextTr = $myTr.next();
-			if($nextTr.attr("class") == "in"){
-				return;
-			}
-			if($(".in").length>0){
-				$(".in").remove();
-			}
-			var $newTr = $("<tr class='in'></tr>");
-			var $td1 = $("<td align='right'>仓库：</td>");
-			$newTr.append($td1);	
-				var storeSelectStr = "<select style='width:200px'>";
-				for(var i = 0;i<storeUuidArr.length;i++){
-					storeSelectStr+="<option value='";
-					storeSelectStr+=storeUuidArr[i];
-					storeSelectStr+="'>";
-					storeSelectStr+=storeNameArr[i];
-					storeSelectStr+="</option>";
-				}
-				storeSelectStr += "</select>";
-			var $td2 = $("<td height='30'>"+storeSelectStr+"</td>");
-			$newTr.append($td2);	
-			//2.3入库多少
-			var $td3 = $("<td align='right'>入库量：</td>");
-			$newTr.append($td3);	
-			//获取当前入库数据总量
-			var totalNum = $(this).parent().prev().text();
-			var $td4 = $("<td><input id='inNum' type='text' value='"+totalNum+"'/></td>");
-			$newTr.append($td4);	
-			var $td5 = $("<td align='center'><a href='javascript:void(0)' class='ajaxIn xiu'><img src='../../../images/icon_3.gif' />确定</a></td>");
-			$newTr.append($td5);
-			//3.将新的行对象添加到当前按钮所在的行对象后面
-			$myTr.after($newTr);
-		});
+		$(".oper").click(onClick(storeUuiArr, storeNameArr));
 		$(".ajaxIn").live("click",function(){
 			//0.页面校验输入是否合法（省略）
 			//1.组织ajax提交的数据
