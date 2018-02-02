@@ -13,7 +13,6 @@ $(function() {
 			storeNameArr[1] = "2号仓库";
 			storeUuidArr[2] = 33;
 			storeNameArr[2] = "3号仓库";
-		var omUuid = 123;
 		document.writeln("<script type='text/javascript' src='lib/onClick.js'></script>");
 		document.writeln("<script type='text/javascript' src='lib/ajaxIn.js'></script>");
 		
