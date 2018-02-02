@@ -9,17 +9,15 @@ var jsonParam = {"bqm.goodsUuid":$(this).attr("value")};
 		jsonParam["bqm.time"]= $("[name='bqm.time']").val();
 		jsonParam["bqm.time2"]= $("[name='bqm.time2']").val();
 		jsonParam["bqm.type"]= $("[name='bqm.type']").val();
-		$tt = ttFun();
-
-		$('.ajaxMsg').empty();
-
-	
-
-		var tCodes = setHead(tt);
-		trHead = tCodes[0];
-		tt = tCodes[1];
 		
-		tCodes = setTr(tr, tt);
-		tr = tCodes[0];
-		tt = tCodes[1];
+		var tCodes =ttFun();
+		
+		var $tt = tCodes[0];
+
+		var trHead = tCodes[1];
+		
+		
+		var tCodes2 = setTr(tr, tt);
+		var tr = tCodes2[0];
+		tt = tCodes2[1];
 }
