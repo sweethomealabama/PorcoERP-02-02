@@ -2,7 +2,7 @@
  * called in Calendar.js
  * @returns
  */
-function CheckHoliday (){
+function calendarCheckHoliday (){
 	_dayElement.innerHTML = _day;
 	if(_day == _date.getDate())
 	{
