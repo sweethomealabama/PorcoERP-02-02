@@ -6,28 +6,7 @@ document.writeln("<script type='text/javascript' src='libCalendar/calendarGetMon
 document.writeln("<script type='text/javascript' src='libCalendar/calendarGetPos.js'></script>");
 
 
-function Calendar(objName){		
-	this.style = {
-			borderColor       		: "#909eff", //边框颜色
-			headerBackColor    		: "#97d645", //表头背景颜色909EFF
-			headerFontColor    		: "#ffffff", //表头字体颜色
-			bodyBarBackColor  		: "#f4f4f4", //日历标题背景色
-			bodyBarFontColor  		: "#000000", //日历标题字体色
-			bodyBackColor     		: "#ffffff", //日历背景色
-			bodyFontColor           : "#000000", //日历字体色 
-			bodyHolidayFontColor    : "#ff0000", //假日字体色
-			watermarkColor 		    : "#888888", //背景水印色
-			moreDayColor            : "#cccccc" 
-	};
-
-	this.showMoreDay = true; //是否显示上月和下月的日期
-	this.Obj = objName;		
-	this.date = null;
-	this.mouseOffset = null;
-	this.dateInput = null;
-	this.timer = null;	
-
-};
+Calendar(objName);
 
 Calendar.prototype.toString = calendarToString();
 Calendar.prototype.getStyle = calendarGetStyle();
@@ -48,25 +27,9 @@ Calendar.prototype.hide = function()
 
 
 
-function PreviDay(){
+PreviDay();
 
-	_previDate = new Date(_year,_month - 1,_previDay);
-	_dayElement.innerHTML = _previDay;
-	_dayElement.title = _previDate.toFormatString("yyyy年mm月dd日");
-	_dayElement.value = _previDate.toFormatString("-");	
-	_dayElement.style.color = this.style.moreDayColor;	
-	_previDay++;
-}
-
-function NextDay(){
-
-	_nextDate = new Date(_year,_month + 1,_nextDay);
-	_dayElement.innerHTML = _nextDay;
-	_dayElement.title = _nextDate.toFormatString("yyyy年mm月dd日");
-	_dayElement.value = _nextDate.toFormatString("-");
-	_dayElement.style.color = this.style.moreDayColor;	
-	_nextDay++;		
-}
+NextDay();
 
 Calendar.prototype.bindDate = calendarBindDate(date);
 Calendar.prototype.bindHeader = calendarBindHeader();	
